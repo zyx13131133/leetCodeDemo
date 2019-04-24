@@ -7,16 +7,28 @@ public class InsertSort implements Sort {
 
     @Override
     public void sort(int[] arr) {
-        for (int i = 1; i < arr.length; i++) {
-            int j;
-            if (arr[i] < arr[i - 1]) {
-                int temp = arr[i];
-                for (j = i - 1; j >= 0 && temp < arr[j]; j--) {
-                    arr[j + 1] = arr[j];
-                }
-
-                arr[j + 1] = temp;
-            }
-        }
+        insertSort(arr);
     }
+
+
+    private void insertSort(int[] arr) {
+        int i, j,temp;
+
+        for (i = 1; i < arr.length; i++) {
+            //假设第一个数已经排序好了,从第二个数开始
+            j = i;
+
+            temp = arr[i];
+
+            while (j >= 0 && temp < arr[j - 1]) {
+                arr[j] = arr[j - 1];
+                j--;
+            }
+
+            arr[j] = temp;
+        }
+
+
+    }
+
 }

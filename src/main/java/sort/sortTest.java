@@ -2,14 +2,13 @@ package sort;
 
 import constans.SortConstans;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class sortTest {
 
-    public static void main(String[] args) {
-        //BubbleSort a = new BubbleSort();
-        SelectionSort a = new SelectionSort();
+    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        SortFactory sortFactory = new SortFactory();
+        sortFactory.sort(MergeSort.class, true);
 
-        a.sort(SortConstans.arr);
-
-        SortConstans.printAfterSort(false);
     }
 }
