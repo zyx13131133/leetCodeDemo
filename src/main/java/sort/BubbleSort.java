@@ -1,5 +1,7 @@
 package sort;
 
+import lombok.Data;
+
 /**
  * 冒泡排序 时间复杂度O(n^2)
  */
